@@ -40,5 +40,7 @@ public class Game {
 	public Hero getOpponent() {
 		return opponent;
 	}
-
+	public static void main(String[] args) {
+		
+	}
 }
