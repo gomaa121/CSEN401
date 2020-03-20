@@ -1,7 +1,11 @@
 package model.cards.minions;
 
+import java.util.ArrayList;
+
+import exceptions.NotSummonedException;
 import model.cards.Card;
 import model.cards.Rarity;
+import model.heroes.Hero;
 
 public class Minion extends Card implements Cloneable {
 	private int attack;
@@ -87,5 +91,16 @@ public class Minion extends Card implements Cloneable {
 	public boolean isDivine() {
 		return divine;
 	}
-
+	public void isOnField(Hero currentHero) throws NotSummonedException {
+		ArrayList<Minion>heroField=currentHero.getField();
+		int heroFieldIndex=0;
+		while(heroFieldIndex<heroField.size()) {
+			if(heroField.get(heroFieldIndex)==this)
+				break;
+			else
+				heroFieldIndex++;
+		}
+		if(heroFieldIndex==heroField.size())
+			throw new NotSummonedException("Minion is not on field");
+	}
 }
