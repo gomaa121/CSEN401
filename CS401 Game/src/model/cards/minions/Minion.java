@@ -97,7 +97,7 @@ public class Minion extends Card implements Cloneable {
 	{
 		this.charge = charge ;
 	}
-	public void attack(Minion target)
+	public void attack(Minion target) // Action of minion attacking a minion
 	{
 		if(this.isDivine() && target.isDivine()) //Both having Divine shield
 		{
@@ -122,7 +122,7 @@ public class Minion extends Card implements Cloneable {
 			target.setCurrentHP(target.getCurrentHP()-(this.getCurrentHP())); //the (target) minion inflicted by the HP of the current minion
 		}
 		}
-	public void attack(Hero target) throws InvalidTargetException
+	public void attack(Hero target) throws InvalidTargetException // Action of minion attacking a hero
 	{
 		if(this.getName().equals("Icehowl"))
 		{
