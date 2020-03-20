@@ -164,4 +164,7 @@ public abstract class Hero implements MinionListener{
 	public String getName() {
 		return name;
 	}
+	public void onMinionDeath(Minion m) {
+		field.remove(m);
+	}
 }
